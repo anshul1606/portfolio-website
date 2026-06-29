@@ -68,9 +68,6 @@ export default function Project(){
                                         </h2>
                                         <ul className="text-gray-300 mt-5 space-y-2">
                                             {project.description.map((point, i) => ( <li key={i} className=" ml-5">
-                                                <span className="text-[#10B981]">
-                                                    ▹
-                                                </span>
                                                 <span>
                                                     {point}
                                                 </span> </li>

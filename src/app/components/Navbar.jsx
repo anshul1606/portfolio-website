@@ -3,6 +3,7 @@ import Image from "next/image";
 import { User, Code2, GraduationCap, FolderGit2, Award, Download, Menu, X, } from "lucide-react";
 import { FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import AnimatedText from "./AnimatedText";
 export default function Navbar(){
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("about");
@@ -78,7 +79,7 @@ export default function Navbar(){
                     <h1 className="bg-gradient-to-r from-[#10B981] to-[#06B6D4] bg-clip-text text-transparent">Anshul Agrawal</h1>
                 </div>
                 <div className="hidden lg:flex justify-center">
-                    <div className="flex gap-5 hover:-translate-y-1">
+                    <div className="flex gap-5">
                         <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start"})} className="flex items-center gap-1 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] hover:drop-shadow-[0_0_10px_#10B981] transition-all duration-300 hover:-translate-y-1"><User size={16} />About</button>
                         <button onClick={() => document.getElementById("skills")?.scrollIntoView({behavior: "smooth", block: "start"})} className="flex items-center gap-1 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] hover:drop-shadow-[0_0_10px_#10B981] transition-all duration-300 hover:-translate-y-1"><Code2 size={16} />Skills</button>
                         <button onClick={() => document.getElementById("education")?.scrollIntoView({behavior: "smooth", block: "start"})} className="flex items-center gap-1 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] hover:drop-shadow-[0_0_10px_#10B981] transition-all duration-300 hover:-translate-y-1"><GraduationCap size={16} />Education</button>
@@ -90,12 +91,12 @@ export default function Navbar(){
                 <div className="flex items-center justify-end gap-2 "> 
                     <a
                         href="tel:+919205137992"
-                        className="w-6 h-6 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"
+                        className="w-20 h-10 flex items-center justify-center rounded-2xl gap-2 bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"
                         >
-                        <FaPhone size={15}/>
+                        <FaPhone size={15}/><AnimatedText text="Phone" />
                     </a> 
-                    <a href="https://www.linkedin.com/in/anshul-agrawal-7ba749221/" target="_blank" rel="noopener noreferrer" className="w-6 h-6 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaLinkedin size={15} /></a>
-                    <a href="https://github.com/anshul1606" target="_blank" className="w-6 h-6 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaGithub size={15} /></a>
+                    <a href="https://www.linkedin.com/in/anshul-agrawal-7ba749221/" target="_blank" rel="noopener noreferrer" className="w-20 h-10 flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaLinkedin size={15} /><AnimatedText text="Linkdln"/></a>
+                    <a href="https://github.com/anshul1606" target="_blank" className="w-20 h-10 flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaGithub size={15} /><AnimatedText text="GitHub"/></a>
                 </div>
             </nav>
         </div>

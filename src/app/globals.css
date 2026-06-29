@@ -42,3 +42,20 @@ body {
 .float-skill {
   animation: floating 3s ease-in-out infinite;
 }
+@keyframes timelineMove {
+  0% {
+    top: 40px;
+  }
+
+  50% {
+    top: calc(100% - 60px);
+  }
+
+  100% {
+    top: 40px;
+  }
+}
+
+.animate-timeline {
+  animation: timelineMove 5s ease-in-out infinite;
+}
