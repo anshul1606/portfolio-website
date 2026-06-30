@@ -4,46 +4,53 @@ import { useRef } from "react";
 import gsap from "gsap";
 
 export default function AnimatedText({ text }) {
-  const letters = useRef([]);
+  const wrappers = useRef([]);
+  
 
-  const enter = () => {
-    gsap.to(letters.current, {
-      yPercent: -100,
-      stagger: 0.03,
-      duration: 0.65,
-      ease: "power2.out",
+  const handleEnter = () => {
+    gsap.to(wrappers.current, {
+    yPercent: -100,
+    stagger:{
+      each:0.025,
+      from:"start"
+    },
+    duration: 0.7,
+    ease: "power4.out",
     });
   };
 
-  const leave = () => {
-    gsap.to(letters.current, {
+  const handleLeave = () => {
+    gsap.to(wrappers.current, {
       yPercent: 0,
-      stagger: 0.03,
-      duration: 0.65,
-      ease: "power2.out",
+      stagger:{
+        each: 0.025,
+        from:"end"
+      },
+      duration: 0.7,
+      ease: "power3.out",
     });
   };
 
   return (
     <span
-      className="flex overflow-hidden cursor-pointer"
-      onMouseEnter={enter}
-      onMouseLeave={leave}
+      className="inline-block cursor-pointer"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
     >
       {text.split("").map((char, i) => (
         <span
           key={i}
-          className="relative h-5 overflow-hidden"
+          className="relative h-[1.2em] overflow-hidden inline-block"
         >
           <span
-            ref={(el) => (letters.current[i] = el)}
-            className="block"
+            ref={(el) => (wrappers.current[i] = el)}
+            className="relative block"
           >
             <span className="block">
               {char === " " ? "\u00A0" : char}
             </span>
 
-            <span className="block">
+            <span className="absolute left-0 top-full block">
               {char === " " ? "\u00A0" : char}
             </span>
           </span>
