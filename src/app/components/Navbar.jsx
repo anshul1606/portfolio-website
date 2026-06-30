@@ -88,15 +88,15 @@ export default function Navbar(){
                         <a href="Anshul_Resume.pdf" download="Anshul_Resume.pdf" className="flex items-center gap-1 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] hover:drop-shadow-[0_0_10px_#10B981] transition-all duration-300 hover:-translate-y-1"><Download size={16} /><AnimatedText text = "Resume" /></a>
                     </div>
                 </div>
-                <div className="flex items-center justify-end gap-2 "> 
+                <div className="flex items-center justify-end gap-3 "> 
                     <a
                         href="tel:+919205137992"
-                        className="w-20 h-10 flex items-center justify-center rounded-2xl gap-2 bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"
+                        className="w-23 h-10 flex items-center justify-center rounded-xl gap-2 bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:shadow-[0_0_15px_rgba(124,140,255,0.6)]"
                         >
                         <FaPhone size={15}/><AnimatedText text="Phone" />
                     </a> 
-                    <a href="https://www.linkedin.com/in/anshul-agrawal-7ba749221/" target="_blank" rel="noopener noreferrer" className="w-20 h-10 flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaLinkedin size={15} /><AnimatedText text="Linkdln"/></a>
-                    <a href="https://github.com/anshul1606" target="_blank" className="w-20 h-10 flex items-center justify-center gap-2 rounded-2xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:scale-110 hover:shadow-[0_0_15px_rgba(124,140,255,0.6)] transition-all duration-300"><FaGithub size={15} /><AnimatedText text="GitHub"/></a>
+                    <a href="https://www.linkedin.com/in/anshul-agrawal-7ba749221/" target="_blank" rel="noopener noreferrer" className="w-23 h-10 flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:shadow-[0_0_15px_rgba(124,140,255,0.6)]"><FaLinkedin size={15} /><AnimatedText text="Linkdln"/></a>
+                    <a href="https://github.com/anshul1606" target="_blank" className="w-23 h-10 flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-[#10B981] hover:to-[#06B6D4] hover:shadow-[0_0_15px_rgba(124,140,255,0.6)]"><FaGithub size={15} /><AnimatedText text="GitHub"/></a>
                 </div>
             </nav>
         </div>
