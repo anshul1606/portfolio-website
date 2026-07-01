@@ -33,21 +33,28 @@ export default function Skills() {
   const arrowRef = useRef(null);
   const skillsRef = useRef(null);
   useEffect(() => {
-    gsap.to(arrowRef.current, {
-    x: 300,
+  // Floating animation
+  gsap.to(arrowRef.current, {
     y: -10,
     repeat: -1,
     yoyo: true,
+    duration: 1,
     ease: "sine.inOut",
+  });
+
+  // Horizontal scroll animation
+  gsap.to(arrowRef.current, {
+    x:() => window.innerWidth * 0.35,
+    ease: "none",
 
     scrollTrigger: {
-        trigger: skillsRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+      trigger: skillsRef.current,
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: true,
     },
-});
-  }, []);
+  });
+}, []);
   return (
     <SectionReveal>
       <section id="skills" ref={skillsRef} className="py-10 px-16">
