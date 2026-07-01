@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 import { useState, useRef, useEffect } from "react";
 import { FaReact, FaJava, FaPhone } from "react-icons/fa";
 import { SiNextdotjs, SiMysql, SiTailwindcss, SiJavascript } from "react-icons/si";
+import { PiFileSqlBold } from "react-icons/pi"; 
 import AnimatedText from "./AnimatedText";
 import Image from "next/image";
 import gsap from "gsap";
@@ -21,11 +22,11 @@ export default function Skills() {
     },
     {
       title: "Database",
-      skills: [{ name: "MySQL", icon: <SiMysql />}, {name:"SQL"}],
+      skills: [{ name: "MySQL", icon: <SiMysql />}, {name:"SQL", icon: <PiFileSqlBold />}],
     },
     {
       title: "Core CS",
-      skills: [{name:"DSA"}, {name:"OOP"}, {name:"DBMS"}],
+      skills: [{name:"DSA", icon: <Image src="/images/dsa_logo.png" alt="DSA" height={20} width={20} className="rounded-full" />}, {name:"OOPs", icon: <Image src="/images/oops.png" alt="OOPs" height={20} width={20} className="rounded-full" />}, {name:"DBMS", icon: <Image src="/images/dbms.png" alt="DBMS" height={20} width={20} className="rounded-full" />}],
     },
   ];
   const[openIndex, setOpenIndex] = useState(0);
@@ -44,7 +45,7 @@ export default function Skills() {
 
   // Horizontal scroll animation
   gsap.to(arrowRef.current, {
-    x:() => window.innerWidth * 0.35,
+    x:() =>  window.innerWidth * 0.35,
     ease: "none",
 
     scrollTrigger: {
