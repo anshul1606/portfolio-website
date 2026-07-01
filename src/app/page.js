@@ -9,6 +9,7 @@ import Certification from "./components/Certification";
 import ScrollReveal from "./components/ScrollReveal";
 import Hero from "./components/Hero";
 import TextType from "./components/TextType";
+import Footer from "./components/Footer";
 
 
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Certification />  
       <ScrollReveal />
       <TextType />
+      <Footer />
     </main>
     
     </>
