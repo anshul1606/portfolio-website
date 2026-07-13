@@ -65,7 +65,7 @@ export default function Footer(){
                                     </button>
                                 </li>
                             ))}
-                            <li><a href="Anshul_Resume.pdf" download="Anshul_Resume.pdf" className="flex items-center gap-1 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] transition-all duration-300"><Download size={16} />Resume</a></li>
+                            <li><a href="Anshul_Resume.pdf" download="Anshul_Resume.pdf" className="flex items-center gap-2 bg-gradient-to-r from-[#10B981] to-[#06B6D4] text-white bg-clip-text text-transparent hover:text-[#10B981] transition-all duration-300"><Download size={16} />Resume</a></li>
                         </ul>
                         </div>
                     </div>
