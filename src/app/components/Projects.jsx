@@ -8,84 +8,105 @@ import "swiper/css/pagination";
 import SectionReveal from "./ScrollReveal";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
-export default function Project(){
-    const project =[
+
+export default function Project() {
+    const project = [
         {
             title: "Blogs Landing Page",
             image: "/images/project_bE.png",
             tech: ["React", "NextJs", "Tailwind CSS", "HTML"],
             description: [
-                "Built a responsive real-estate blog landing page from scratch using React.js, Next.js, and Tailwind CSS.",
-                "Implemented reusable components, smooth navigation, and mobile-first responsive design.",
-                "Enhanced user experience through modern UI/UX practices and optimized frontend performance.",
-                "Managed source code using Git and GitHub and deployed the application on Vercel."
+                "Built a responsive real-estate blog landing page.",
+                "Implemented reusable components and smooth navigation.",
+                "Mobile-first responsive design and optimized frontend performance.",
             ],
             github: "https://github.com/anshul1606/landing-page",
         },
         {
-            title: "User Admin Hub Web Application",
+            title: "User Admin Hub",
             image: "/images/user_image.jpeg",
             tech: ["JSP", "Servlet", "SQL"],
             description: [
-                "Developed a user admin management web application using JSP, Servlet, and SQL to manage user registration, authentication, and role-based access control, ensuring secure user management and data handling.",
-                "Designed and implemented an admin panel that enables CRUD operations for user accounts and roles, improving usability and providing administrators with comprehensive control over user data and permissions.",
-                "Optimized performance and security by implementing SQL query optimization, input validation, and secure password handling using hashing techniques, following MVC architecture for maintainability and scalability.",
+                "Managed user registration, authentication, and role-based access.",
+                "Admin panel with CRUD operations for user accounts.",
+                "Secure password handling using hashing techniques.",
             ],
             github: "https://github.com/anshul1606/UserAdmin-Hub-Web-Application-",
         },
         {
-            title: "Travel Booking Hub (Jingle Holiday Bazaar)",
+            title: "Travel Booking Hub",
             image: "/images/travel_image.png",
             tech: ["HTML", "CSS", "JavaScript"],
             description: [
-                "Developed a travel booking website with clean UI using HTML, CSS, Bootstrap, and JavaScript",
-                "Created sections for tour packages, destinations, and contact details with smooth navigation.",
-                "Designed reusable components and layouts to present travel information attractively."
+                "Clean UI for tour packages and destinations.",
+                "Interactive sections for travel booking.",
+                "Designed reusable components for travel info.",
             ],
             github: "https://github.com/anshul1606/Jingle-Holidat-Bazaar-Web-Page",
         },
-    ]
-    return(
-         <SectionReveal>
-             <section id="projects" className="py-4 px-16"> 
-                <h1 className="text-4xl font-bold text-white py-3">Projects</h1>
-                 <div className="max-auto rounded-3xl">
-                     <Swiper autoHeight={true} modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} spaceBetween={0} slidesPerView={1} className="px-4">
-                         {project.map((project, index) => ( 
-                            <SwiperSlide
-                            key = {index}>
-                            <div className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} overflow-hidden rounded-3xl bg-white/5 border border-[#10B981]/30 backdrop-blur-xl hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-500 relative`}>
-                                <div className="md:w-[55%] overflow-hidden">
-                                 {project.image && (
-                                     <Image src={project.image} alt={project.title} height={1000} width={1000} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />)}
-                                </div>
-                                <div className="p-8 md:w-[65%] flex flex-col justify-center">
-                                    <span className="text-[#10B981] font-medium">
-                                        Project {String(index + 1).padStart(2, "0")}
+    ];
+
+    return (
+        <SectionReveal>
+            <section id="projects" className="py-12 md:py-20 px-4 md:px-16 max-w-7xl mx-auto"> 
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Projects</h2>
+                
+                <div className="w-full">
+                    <Swiper 
+                        autoHeight={true} 
+                        modules={[Navigation, Pagination]} 
+                        navigation 
+                        pagination={{ clickable: true }} 
+                        spaceBetween={20} 
+                        slidesPerView={1} 
+                        className="pb-12"
+                    >
+                        {project.map((proj, index) => ( 
+                            <SwiperSlide key={index}>
+                                <div className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} rounded-3xl bg-white/5 border border-[#10B981]/30 backdrop-blur-xl shadow-xl overflow-hidden`}>
+                                    
+                                    
+                                    <div className="md:w-[55%] h-64 md:h-auto overflow-hidden">
+                                        <Image 
+                                            src={proj.image} 
+                                            alt={proj.title} 
+                                            height={600} 
+                                            width={800} 
+                                            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" 
+                                        />
+                                    </div>
+
+                                    {/* Content Wrapper */}
+                                    <div className="p-6 md:p-10 md:w-[45%] flex flex-col justify-center">
+                                        <span className="text-[#10B981] font-medium text-sm">
+                                            Project {String(index + 1).padStart(2, "0")}
                                         </span>
-                                        <h2 className="text-3xl font-bold bg-gradient-to-r from-[#10B981] to-[#06B6D4] bg-clip-text text-transparent mt-2" >
-                                            {project.title}
-                                        </h2>
-                                        <ul className="text-gray-300 mt-5 space-y-2">
-                                            {project.description.map((point, i) => ( <li key={i} className=" ml-5">
-                                                <span>
-                                                    {point}
-                                                </span> </li>
-                                                 ))}
-                                                </ul>
-                                        <div className="flex flex-wrap gap-3 mt-6">
-                                            {project.tech.map((item) => ( <span key={item} className=" rounded-full px-3 py-1 bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-sm ">
-                                            {item}
-                                            </span> ))} </div>
-                                        <div className="flex gap-4 mt-8">
-                                            <a href={project.github}
-                                            className=" px-5 py-3 rounded-xl border border-white/10 text-white flex items-center gap-2 hover:text-[#10B981] hover:drop-shadow-[0_0_10px_#10B981]">
-                                                GitHub
-                                                <FaGithub />
-                                                </a> </div>
+                                        <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#10B981] to-[#06B6D4] bg-clip-text text-transparent mt-2">
+                                            {proj.title}
+                                        </h3>
+                                        
+                                        <ul className="text-gray-300 mt-4 space-y-2 text-sm md:text-base list-disc pl-4">
+                                            {proj.description.map((point, i) => ( 
+                                                <li key={i}>{point}</li>
+                                            ))}
+                                        </ul>
+
+                                        <div className="flex flex-wrap gap-2 mt-6">
+                                            {proj.tech.map((item) => ( 
+                                                <span key={item} className="rounded-full px-3 py-1 bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs md:text-sm">
+                                                    {item}
+                                                </span> 
+                                            ))} 
+                                        </div>
+                                        
+                                        <div className="mt-8">
+                                            <a href={proj.github} target="_blank" className="px-5 py-3 rounded-xl border border-white/10 text-white inline-flex items-center gap-2 hover:text-[#10B981] hover:border-[#10B981] transition-all">
+                                                GitHub <FaGithub />
+                                            </a> 
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
+                            </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>

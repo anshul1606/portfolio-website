@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { gsap } from "gsap";
 
-export default function SectionReveal({ children }) {
+export default function SectionReveal({ children, className = "" }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function SectionReveal({ children }) {
     scale: 1,
     filter: "blur(0px)",
     duration: 1,
-    ease: "power3.out",
+    ease: "power4.out",
     scrollTrigger: {
       trigger: element,
       start: "top 85%",
@@ -37,7 +37,7 @@ export default function SectionReveal({ children }) {
 }, []);
 
   return (
-    <div ref={sectionRef}>
+    <div ref={sectionRef} className={`w-full ${className}`}>
       {children}
     </div>
   );

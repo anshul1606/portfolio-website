@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-    <main className=" w-full relative">
+    <main className="w-full overflow-x-hidden">
       <BgImage />
       <Navbar />
       <Hero />
