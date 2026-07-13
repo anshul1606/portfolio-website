@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { FaReact, FaJava, FaPhone } from "react-icons/fa";
 import { SiNextdotjs, SiMysql, SiTailwindcss, SiJavascript } from "react-icons/si";
 import { PiFileSqlBold } from "react-icons/pi"; 
-import AnimatedText from "./AnimatedText";
+
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -88,12 +88,7 @@ export default function Skills() {
             
             <div className="w-full h-px bg-gradient-to-r from-transparent via-[#10B981] to-transparent my-8 md:my-10"></div>
             
-            <div>
-              <a href="tel:+919205137992" className="text-[#10B981] font-bold flex items-center gap-2 hover:text-white transition-colors w-fit">
-                <AnimatedText text="CONTACT ME" />
-                <FaPhone size={15} />
-              </a>
-            </div>
+            
             
             {/* Arrow hidden on mobile, visible on desktop */}
             <div ref={arrowRef} className="hidden lg:block py-10">

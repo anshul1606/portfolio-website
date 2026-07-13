@@ -1,7 +1,8 @@
 "use client";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { User, Code2, GraduationCap, FolderGit2, Award, Download } from "lucide-react";
+import AnimatedText from "./AnimatedText";
 
 export default function Footer() {
     
@@ -57,6 +58,10 @@ export default function Footer() {
                     <a href="https://github.com/anshul1606" target="_blank" rel="noopener noreferrer" className="p-3.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-black hover:bg-[#10B981] hover:border-[#10B981] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]" aria-label="GitHub">
                         <FaGithub size={20} />
                     </a>
+                    <a href="tel:+919205137992" className="p-3.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-black hover:bg-[#10B981] hover:border-[#10B981] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+                        <FaPhone size={20} />
+                    </a>
+                                
                 </div>
                 
                 
