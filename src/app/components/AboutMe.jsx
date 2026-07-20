@@ -2,16 +2,39 @@
 
 import Image from "next/image";
 import SectionReveal from "./ScrollReveal";
+import { useMotionTemplate, useMotionValueEvent, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
+  const ref = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+  const translateContent = useTransform(scrollYProgress, [0, 1], [-100, 200] );
+  const opacityContent = useTransform(scrollYProgress, [0, 0.5, 1], [0,1,0]);
+  const blur = useSpring(useTransform(scrollYProgress, [0.5,1], [0, 3]), {
+    stiffness: 30,
+    damping: 20,
+    mass: 10,
+  },);
+  const scale = useTransform(scrollYProgress, [0.5,1], [1,0.8]);
   return (
     <section 
+    ref={ref} 
       id="about" 
       className="relative w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-16 px-4 sm:px-8 md:px-10 lg:px-16 pt-0 pb-5 md:pb-20"
     >
       
       {/* Text Content */}
-      <div className="flex-1 w-full">
+      <motion.div 
+      style={{
+        y: translateContent,
+        opacity: opacityContent,
+        sclae: scale,
+      }}
+      className="flex-1 w-full">
         <SectionReveal>
           <div className="bg-transparent rounded-3xl flex flex-col items-center md:items-start text-center md:text-left mx-auto">
             
@@ -29,10 +52,14 @@ export default function AboutMe() {
             
           </div>
         </SectionReveal>
-      </div>
+      </motion.div>
 
       {/* Image */}
-      <div className="w-full flex justify-center md:w-auto md:justify-end">
+      <motion.div
+      style={{
+        filter: useMotionTemplate`blur(${blur}px)`,
+      }}
+      className="w-full flex justify-center md:w-auto md:justify-end">
         <SectionReveal>
           <div className="relative rounded-full p-1 border-2 border-[#10B981]/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] mx-auto">
             <Image 
@@ -44,7 +71,7 @@ export default function AboutMe() {
             />
           </div>
         </SectionReveal>
-      </div>
+      </motion.div>
       
     </section>
   );

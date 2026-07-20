@@ -2,7 +2,6 @@
 import { FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { User, Code2, GraduationCap, FolderGit2, Award, Download } from "lucide-react";
-import AnimatedText from "./AnimatedText";
 
 export default function Footer() {
     

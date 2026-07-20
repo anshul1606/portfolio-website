@@ -56,7 +56,7 @@ export default function Education() {
 
   return (
     <SectionReveal>
-      <section id="education" className="px-4 sm:px-8 md:px-16 py-12 md:py-20 max-w-5xl mx-auto overflow-hidden">
+      <section id="education" className="px-4 sm:px-8 md:px-16 py-10 md:py-12 max-w-5xl mx-auto overflow-hidden">
         
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center md:text-left">Education</h2>
         
